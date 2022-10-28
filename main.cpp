@@ -2,13 +2,16 @@
 using namespace std;
 
 ////////////funtion prototype////////////
-int score(const char answ[][5], int N_ROWS, int N_COLS);
+int score(const char answ[][5], int r, int N_COLS);
 
 
 int main()
 {
+int FinalScore = 0; 
+const int N_COLS = 5;
+const int N_ROWS = 6;
 
-char tests[6][5]=
+char answ[N_ROWS][N_COLS] = 
 {
   {'T', 'F', 'T', 'T', 'T'},
   {'T', 'T', 'T', 'T', 'T'},
@@ -18,25 +21,27 @@ char tests[6][5]=
   {'T', 'T', 'F', 'T', 'F'}
   };
   
-  int points = tot_points(tests, 6);
-  for (int j = 0; j++);
-    cout<< points[j]<< " ,";
-
+ 
+  for (int r = 0; r<6; r++){
+    score(answ, r, N_COLS);
+    FinalScore = score(answ, r, N_COLS);
+    }
+    
+  cout<< FinalScore<< endl;
   return 0;
   
 }
 
-int score(const char answ[][5], int N_ROWS, int N_COLS)
+int score(const char answ[][5], int r, int N_COLS)
 {
-  int score = 0;
   
-  const char answ[5] = {'T', 'T', 'F', 'F', 'T'};
-  int score = new int[N_ROWS]();
-  const int point = 5;
-
-  for (c = 0; c < N_COLS; c++)
-  for (r = 0; r < 5; r++)
-    if(answ[r][c] == answ[c])
-      score[c] score + 5;
+  int score = 0;
+  const char key[5] = {'T', 'T', 'F', 'F', 'T'};
+  
+  for (int c = 0; c < N_COLS; c++)
+  {
+    if(answ[r][c] == key[c])
+      score = score + 5;
+    }
   return score;
 }
