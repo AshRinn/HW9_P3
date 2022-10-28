@@ -25,9 +25,10 @@ char answ[N_ROWS][N_COLS] =
   for (int r = 0; r<6; r++){
     score(answ, r, N_COLS);
     FinalScore = score(answ, r, N_COLS);
+    cout<< FinalScore<< endl;
     }
     
-  cout<< FinalScore<< endl;
+  
   return 0;
   
 }
